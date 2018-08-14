@@ -4,23 +4,56 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <meta name="theme-color" content="#083756">
+    <meta name="theme-color" content="#222d33">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Inicio</title>
     <link rel="icon" type="image/png" href="img/icono-pagina.png">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/fonts/style.css">
     <script src=""></script>
 </head>
 
 <body>
-    <div class="ds_container ds_row-12">
-        <div class="ds_col-3">
-            <p>Estamos buscando servidoreas dedicados</p>
+    <header class="ds_pad-5">
+        <div class="ds_container ds_row-12 alto-full">
+            <div class="ds_col-2 logo">
+                <img src="img/SVG/Logo.svg" alt="logo">
+                <div id="btn-menu">
+                    <label for="btn-menu-mobile"><span class="icon-bars"></span></label>
+                    <input onclick="menuMobile()" style="display: none" id="btn-menu-mobile" type="checkbox">
+                </div>
+            </div>
+            <div class="ds_col-10 menu">
+                <nav>
+                    <li>
+                        <a href="">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="">servicios</a>
+                    </li>
+                    <li>
+                        <a href="">portafolio</a>
+                    </li>
+                    <li>
+                        <a href="">quienes somos</a>
+                    </li>
+                    <li>
+                        <a href="">contacto</a>
+                    </li>
+                    <div class="right flexible">
+                        <li><a style="color: #fff; font-weight: 600;" href="#">Entrar</a></li>
+                        <li class="btn-signup"><a href="#">crear cuenta gratis</a></li>
+                    </div>
+                </nav>
+            </div>
         </div>
-        <div class="ds_col-3">
-            <p>suscribete a nuestro canal</p>
-        </div>
+    </header>
+    <div class="ds_container-full fondo-azul">
+        <h2>Buscar empleo ahora</h2>
+        <p>Las mejores ofertas de empleo para ti</p>
     </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/funciones.js"></script>
 </body>
 
 </html>

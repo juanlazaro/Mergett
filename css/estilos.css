@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html,
@@ -15,17 +17,109 @@ body {
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --color-parrafos: rgba(0, 0, 0, 0.6);
+    --color-encabezados: rgba(0, 0, 0, 0.8);
+    --color-menu: #b0c7ed;
+    --bg-color-header: #222d33;
+}
+
+header {
+    background-color: var(--bg-color-header);
+    color: #fff;
+    height: 45px;
+}
+
+p,
+label {
+    color: var(--color-parrafos);
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin-bottom: auto;
+    margin-top: auto;
+    padding: 7px 15px;
+}
+
+nav li a {
+    color: var(--color-menu);
+    font-size: 0.75rem;
+    display: block;
+    margin: auto;
+    text-transform: capitalize;
+    transition: all 0.3s;
+    position: relative;
+}
+
+nav li a::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1.5px;
+    background: #fff;
+    position: absolute;
+    bottom: -3px;
+    transition: all 0.15s ease-in-out;
+    left: 50%;
+    opacity: 0.5;
+}
+
+nav > li > a:hover::before {
+    width: 100%;
+    left: 0;
+    opacity: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-encabezados);
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.logo {
+    height: 100%;
+    padding: 3px;
+    display: flex;
+}
+
+.logo img {
+    height: 30px;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 /*========================================
 ===== EMPIEZAN LOS ESTILOS GENERALES =====
 ========================================*/
 
+.alto-full {
+    height: 100%;
+}
+
 .ds_container {
     margin: auto;
     max-width: 1200px;
     width: 100%;
+}
+
+.ds-container-full {
+    width: 100%;
+    display: flex;
 }
 
 .ds_row-12 {
@@ -35,8 +129,8 @@ body {
     grid-gap: 10px;
 }
 
-.ds_row-12>div {
-    background-color: rgba(0, 0, 0, 0.3);
+.ds_row-12 > div {
+    background-color: rgba(0, 0, 0, 0.0);
 }
 
 /*----- ----- EMPIEZAN LAS COLUMNAS ----- -----*/
@@ -140,7 +234,10 @@ body {
 .flexible {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+}
+
+.right {
+    margin-left: auto;
 }
 
 /*----- ----- TERMINAN LOS ESTILOS PARA LOS DISPLAYS ----- -----*/
@@ -148,3 +245,92 @@ body {
 /*========================================
 ===== TERMINAN LOS ESTILOS GENERALES =====
 ========================================*/
+
+.btn-signup {
+    border: 1px solid var(--color-menu);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.btn-signup a {
+    transition: all 0.1s ease-in-out;
+}
+
+.btn-signup:hover {
+    border: 1px solid #ff456a;
+    background-color: #ff456a;
+}
+
+.btn-signup:hover > a {
+    color: #fff;
+}
+
+#btn-menu {
+    display: none;
+}
+
+.fondo-azul {
+    background: linear-gradient(102deg, #0051bb, #1476fb);
+    height: 200px;
+    position: relative;
+}
+
+.fondo-azul > h2,
+p {
+    text-align: center;
+    color: #fff;
+}
+
+.fondo-azul h2 {
+    font-weight: 400;
+}
+
+.fondo-azul p {
+    font-weight: 300;
+}
+
+/*===================================
+===== EMPIEZAN LOS MEDIA QUERYS =====
+===================================*/
+
+@media (max-width:900px) {
+    nav {
+        background-color: var(--bg-color-header);
+        padding: 10px;
+    }
+    nav li {
+        display: block;
+        width: 100%;
+    }
+    .right {
+        width: 100%;
+    }
+    .menu {
+        transform: translateX(-100%);
+        position: absolute;
+        background-color: var(--bg-color-header);
+        top: 45px;
+        left: 0;
+        width: 100%;
+        transition: all 0.3s;
+        z-index: 10;
+    }
+    .logo {
+        grid-column: span 12;
+    }
+    #btn-menu {
+        display: inherit;
+        margin-left: auto;
+    }
+    #btn-menu label {
+        color: #fff;
+        margin: auto;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+}
+
+/*===================================
+===== TERMINAN LOS MEDIA QUERYS =====
+===================================*/
